@@ -8,7 +8,7 @@ using namespace std;
 
 class music;
 const int T=75;
-const char src[]="src\\";
+const char src[]="src/";
 const char wav[]=".wav";
 
 //音符生成器
@@ -35,7 +35,7 @@ private:
 
 public:
     void setnote_c();
-    int get_c(int i){cout<<"chord="<<c[i%lenth]<<endl;return c[i%lenth];};//输出和弦
+    int get_c(int i);//输出和弦
 };
 
 //节奏型控制器

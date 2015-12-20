@@ -54,20 +54,28 @@ void note_c::setnote_c()
     FILE *fp;
     lenth=0;
     int i,f=0;
-    if((fp=fopen("data\\chord.txt","r"))!=NULL)
+    if((fp=fopen("data/chord.txt","r"))!=NULL)
     {
         for(i=0;i<16;i++)
         {
-            if(fscanf(fp,"%d",&c[i])==EOF){f=-1;break;}
+            if(fscanf(fp,"%d",&c[i])==EOF)
+			{f=-1;break;}
             lenth++;
-            if(f==-1)break;
+            if(f==-1)
+				break;
         }
         fclose(fp);
     }
     else
     {
-        cout<<"系统文件\"data\\chord.txt\"缺失，请找回文件再启动本程序！"<<endl;
+        cout<<"系统文件\"data/chord.txt\"缺失，请找回文件再启动本程序！"<<endl;
     }
+}
+
+int note_c::get_c(int i)
+{
+	cout<<"chord="<<c[i%lenth]<<endl;
+	return c[i%lenth];
 }
 
 //节奏型控制器
@@ -159,7 +167,7 @@ int music::play(int n)
                     break;
                 }
                 cout<<"时钟："<<t<<"音高："<<mn.h<<"\t音长："<<mn.t<<endl;
-                fprintf(fp,"%d %d %d\n",t,mn.t,mn.h);
+                fprintf(fp,"%d %d %d\n",t,mn.t,mn.h);//写出
                 v[0]='\0';
                 m[0]=mn.h/10+48;
                 m[1]=mn.h%10+48;
@@ -168,7 +176,7 @@ int music::play(int n)
                 strcat(v,m);
                 strcat(v,wav);
                 printf("%s\n",v);
-                //PlaySound(v, NULL,  SND_FILENAME | SND_ASYNC);
+                //PlaySound(v, NULL,  SND_FILENAME | SND_ASYNC); //播放一下看看效果
                 num++;
                 _sleep(T*mn.t);
             }
