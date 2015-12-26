@@ -38,7 +38,7 @@ int note_p::get_p()
 note_p::note_p()
 {
     FILE *fp;
-    if((fp=fopen("data/note.txt","r"))!=NULL)//这个文件中记录着对袅袅文件的分析结果
+    if((fp=fopen("note.txt","r"))!=NULL)//这个文件中记录着对袅袅文件的分析结果
     {
         for(int i=0;i<7;i++)
         {
@@ -49,7 +49,7 @@ note_p::note_p()
     }
     else
     {
-        cout<<"系统文件\"data\\note.txt\"缺失，请找回文件再启动本程序！"<<endl;
+        cout<<"系统文件\"note.txt\"缺失，请找回文件再启动本程序！"<<endl;
         getchar();
         exit(0);
     }
@@ -60,7 +60,7 @@ void note_c::setnote_c()
 {
     FILE *fp;
     lenth=0;
-    if((fp=fopen("data/chord.txt","r"))!=NULL)
+    if((fp=fopen("chord.txt","r"))!=NULL)
     {
         int f=0;
         for(int i=0;i<16;i++)
@@ -78,7 +78,7 @@ void note_c::setnote_c()
     }
     else
     {
-        cout<<"系统文件\"data\\chord.txt\"缺失，请找回文件再启动本程序！"<<endl;
+        cout<<"系统文件\"chord.txt\"缺失，请找回文件再启动本程序！"<<endl;
         getchar();
         exit(0);
     }
