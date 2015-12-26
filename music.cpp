@@ -29,7 +29,7 @@ note_p::note_p()
 {
     FILE *fp;
     int i,j;
-    if((fp=fopen("data\\note.txt","r"))!=NULL)
+    if((fp=fopen("data/note.txt","r"))!=NULL)//这个文件中记录着对袅袅文件的分析结果
     {
         for(i=0;i<7;i++)
         {
@@ -68,7 +68,7 @@ void note_c::setnote_c()
     }
     else
     {
-        cout<<"系统文件\"data/chord.txt\"缺失，请找回文件再启动本程序！"<<endl;
+        cout<<"系统文件\"data\\chord.txt\"缺失，请找回文件再启动本程序！"<<endl;
     }
 }
 
@@ -175,8 +175,8 @@ int music::play(int n)
                 strcat(v,src);
                 strcat(v,m);
                 strcat(v,wav);
-                printf("%s\n",v);
-                //PlaySound(v, NULL,  SND_FILENAME | SND_ASYNC); //播放一下看看效果
+                printf("%s\n",v);//把生成的配乐写入wav
+                //PlaySound(v, NULL,  SND_FILENAME | SND_ASYNC); //直接播放wav看效果
                 num++;
                 _sleep(T*mn.t);
             }
