@@ -4,11 +4,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    ../music.cpp
+    music.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    ../music.h
+    music.h
 

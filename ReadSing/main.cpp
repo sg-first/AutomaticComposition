@@ -9,7 +9,7 @@ int main()//歌曲分析部分
     char s[1000],note[13]="BC#D#EF#G#A#";
     if((fpr=fopen("src_note.txt","r"))!=NULL)
     {
-        fscanf(fpr,"%d",&n);//读了一个没创建过的文件？
+        fscanf(fpr,"%d",&n);
         for(i=0;i<12;i++)
         {
             for(j=0;j<12;j++)
@@ -66,7 +66,7 @@ int main()//歌曲分析部分
     }
 	
     fclose(fpr);
-    fpw=fopen("src_note.txt","w");//一个记录作用？
+    fpw=fopen("src_note.txt","w");//一个记录作用？关键是写不是前面的读
     fprintf(fpw,"%d\n",n);//先写入之前读的次数
     for(i=0;i<12;i++)//再循环把之前统计的写一下
     {

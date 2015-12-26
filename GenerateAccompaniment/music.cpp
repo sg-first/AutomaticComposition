@@ -71,8 +71,8 @@ void note_c::setnote_c()
                 break;
             }
             lenth++;
-            if(f==-1)//这块逻辑有问题
-				break;
+            /*if(f==-1)//这块逻辑有问题，先搞掉
+                break;*/
         }
         fclose(fp);
     }
