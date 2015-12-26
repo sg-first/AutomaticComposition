@@ -38,12 +38,11 @@ int note_p::get_p()
 note_p::note_p()
 {
     FILE *fp;
-    int i,j;
     if((fp=fopen("data/note.txt","r"))!=NULL)//这个文件中记录着对袅袅文件的分析结果
     {
-        for(i=0;i<7;i++)
+        for(int i=0;i<7;i++)
         {
-            for(j=0;j<7;j++)
+            for(int j=0;j<7;j++)
             {fscanf(fp,"%f",&p[i][j]);}
         }
         fclose(fp);
@@ -61,10 +60,10 @@ void note_c::setnote_c()
 {
     FILE *fp;
     lenth=0;
-    int i,f=0;
     if((fp=fopen("data/chord.txt","r"))!=NULL)
     {
-        for(i=0;i<16;i++)
+        int f=0;
+        for(int i=0;i<16;i++)
         {
             if(fscanf(fp,"%d",&c[i])==EOF)
             {
@@ -72,7 +71,7 @@ void note_c::setnote_c()
                 break;
             }
             lenth++;
-            if(f==-1)
+            if(f==-1)//这块逻辑有问题
 				break;
         }
         fclose(fp);
@@ -97,24 +96,24 @@ int note_t::get_t(int timer)
 
 void note_t::setnote_t()
 {
-    int i,j,sum=0;
-    lenth=64;
     notef=1;
     noteX=2;
     min=1;
     srand(time(0));
-    for(i=0;i<4;i++)
+    for(int i=0;i<4;i++)
     {
-        for(j=0;j<16;j++)
+        for(int j=0;j<16;j++)
         {
             t[i][j]=0;
         }
     }
     cout<<"计算机产生的节奏型："<<endl;
-    for(j=0;j<4;j++)
+    const int lenth=64;
+    int sum;
+    for(int j=0;j<4;j++)
     {
         sum=0;
-        for(i=0;sum<lenth && i<16;i++)
+        for(int i=0;sum<lenth && i<16;i++)
         {
             t[j][i]=2*(rand()%noteX+min+(i/(lenth/(2*notef)))%2);
             if(sum+t[j][i]>=64)t[j][i]=64-sum;

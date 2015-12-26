@@ -3,7 +3,7 @@
 int main()//歌曲分析部分
 {
     FILE *fpr,*fpw;
-    int x,y,i,j,n=0,f=0,d;
+    int y,i,j,n=0,f=0;
     int a[12][12]={0};
     float p[12][12]={0};
     char s[1000],note[13]="BC#D#EF#G#A#";
@@ -29,6 +29,7 @@ int main()//歌曲分析部分
     for(i=0;i<9;i++)
     {fscanf(fpr,"%s",s);}
 
+	int x;
     while(1)
     {
         x=y;
@@ -75,6 +76,7 @@ int main()//歌曲分析部分
     }
     fclose(fpw);
     fpw=fopen("note.txt","w");//再次准备写，它在note_p中被用到
+	int d;
     for(i=0;i<12;i++)
     {
         d=0;
