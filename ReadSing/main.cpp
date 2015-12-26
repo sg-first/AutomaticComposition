@@ -49,7 +49,6 @@ int main()//歌曲分析部分
         n++;
         if(f==1)//读完了就退
 			break;
-        //system("cls");
         printf("音符统计：第%d个数据\n",n);//输出这段的分析结果
         printf("\tB\tC\t#\tD\t#\tE\tF\t#\tG\t#\tA\t#\n");
         for(i=0;i<12;i++)
