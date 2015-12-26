@@ -141,7 +141,8 @@ int music::play(int n)
             mn.h=mn.c;
             for(int k=0;k<16;k++,t+=mn.t)//一个乐句
             {
-                if(k%4==0)producer.setnote(mn.c%10);
+                if(k%4==0)
+                    producer.setnote(mn.c%10);
                 //产生音符的音高
                 mn.p=producer.get_p();
                 cout<<mn.p<<endl;

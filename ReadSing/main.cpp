@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int main()//歌曲分析部分
 {
     FILE *fpr,*fpw;

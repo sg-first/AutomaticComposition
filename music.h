@@ -15,7 +15,7 @@ const char wav[]=".wav";
 class note_p
 {
 private:
-    friend music;
+    friend class music;
     float p[7][7];//音符生成概率表
     int a[2];//根据前一个音符，生成后一个音符
 
@@ -29,7 +29,7 @@ public:
 class note_c
 {
 private:
-    friend music;
+    friend class music;
     int c[16];//和弦走向数据表
     int lenth;
 
@@ -42,7 +42,7 @@ public:
 class note_t
 {
 private:
-    friend music;
+    friend class music;
     int t[4][16];//每一乐句最多16个音符，每个音符最少占n个单位时间，每一乐段四句
     int lenth;//乐句长度
     int min;//最小音符长度
