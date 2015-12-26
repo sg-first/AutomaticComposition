@@ -164,9 +164,9 @@ int music::play(int n)
                 {
                     if(mn.p-mn.h%7<-4)
                         mn.h=mn.p+mn.c/10*10+10;
+                    else
+                        mn.h=mn.p+mn.c/10*10;
                 }
-                else
-                {mn.h=mn.p+mn.c/10*10;}
                 //产生音符的音长
                 mn.t=timer.get_t(16*f+k);
                 if(mn.t==0)
